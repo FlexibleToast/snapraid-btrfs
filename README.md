@@ -315,8 +315,10 @@ new snapshots are okay before continuing with the sync. Since the sync will
 only be run after the user has approved the diff, the `--force-zero` and 
 `--force-empty` option is passed through to `snapraid`. The behavior of this 
 command is equivalent to running `snapraid-btrfs diff` followed by
-```snapraid-btrfs --interactive --use-snapshot-all=diff \
-  sync --force-zero --force-empty```
+```(bash)
+snapraid-btrfs --interactive --use-snapshot-all=diff \
+  sync --force-zero --force-empty
+```
 except that `snapraid-btrfs dsync` will only run the sync if `snapraid diff`
 indicates that there have been changes since the last sync. Otherwise,
 `snapraid-btrfs dsync` will simply exit after the diff.
